@@ -1,3 +1,4 @@
 # Statistics-Modeling
 
-    NEGATIVE BINOMIAL REGRESSION Dashboard
+    Various statistical Dashboard
+       - NEGATIVE BINOMIAL REGRESSION 
