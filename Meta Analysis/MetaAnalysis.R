@@ -46,7 +46,9 @@ server <- function(input, output) {
   # Meta Analysis in R----------------------------------------------------------
   ##----------------------------------------------------------------------------
   # LIBRARY meta----------------------------------------------------------------
-  # source: https://www.r-bloggers.com/2021/08/meta-analysis-in-r/
+  # source: https://cran.r-project.org/web/packages/meta/index.html
+  #         https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/
+  #         https://www.r-bloggers.com/2021/08/meta-analysis-in-r/
   
   library(meta)
   dat <- data("Fleiss1993cont")
