@@ -6,6 +6,13 @@ if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-proj
 if(!require(rspat)) install.packages("rspat", repos = "http://cran.us.r-project.org")
 if(!require(terra)) install.packages("terra", repos = "http://cran.us.r-project.org")
 
+# Load libraries
+library(ggplot2)
+library(rspat)
+library(terra)
+library(reactable)
+
+
 # Define UI ----
 ui <- fluidPage(
   titlePanel("ANALYZING SPECIES DISTRIBUTION DATA"),
@@ -47,7 +54,7 @@ server <- function(input, output) {
   # Descriptive statistics and plots
   library(reactable)
   output$table = renderReactable({
-    
+
     f <- system.file("wildpot.csv", package="rspat")
     #basename(f)
     ## [1] "wildpot.csv"
@@ -64,8 +71,8 @@ server <- function(input, output) {
     v$lat[v$LatH == 'S'] <- -1 * v$lat[v$LatH == 'S']
     head(v)
     v
-
     saveRDS(v, file = "v.Rds")
+    
     reactable(
       v[1:length(v$ID), ],
       searchable = TRUE,
@@ -89,7 +96,7 @@ server <- function(input, output) {
   })
   
   output$distribPlot1 <- renderPlot({
-
+    
     ##  extracted file is a csv file (comma-seperated-by values).-------------------
     hh=spp=maxD=CA=NULL;
 
@@ -306,43 +313,6 @@ server <- function(input, output) {
     
     ahull <- expanse(hh)
     plot(rev(sort(ahull))/1000, ylab="Area of convex hull")
-    
-  })
-  
-  output$distribPlot2 <- renderPlot({
-    
-    f <- system.file("wildpot.csv", package="rspat")
-    basename(f)
-    v <- read.csv(f, row.names=NULL)
-    sp <- terra::vect(v, crs="+proj=longlat +datum=WGS84")
-    laea <-"+proj=laea  +lat_0=0 +lon_0=-80"
-    pts <- project(sp, laea)
-    ##  Get the area for each hull, taking care of the fact that some are NULL.-----
-    spp <- unique(pts$SPECIES)
-    hull <- list()
-    for (s in 1:length(spp)) {
-      p <- unique(pts[pts$SPECIES == spp[s], ])
-      # need at least three (unique) points for hull
-      if (nrow(p) > 3) {
-        h <- convHull(p)
-        if (terra::geomtype(h) == "polygons") {
-          hull[[s]] <- h
-        }
-      }
-    }
-    i <- which(!sapply(hull, is.null))
-    h <- hull[i]
-    # combine them
-    hh <- do.call(rbind, h)
-    ahull <- expanse(hh)
-    
-    
-    ##  To get a value (even if NA) for all species---------------------------------
-    cHull <- rep(NA, length(spp))
-    cHull[i] <- ahull
-    ##  Compare all three measures--------------------------------------------------
-    d <- cbind(maxD, CA, cHull)
-    pairs(d)
     
   })
 }
