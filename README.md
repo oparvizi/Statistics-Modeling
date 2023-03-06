@@ -4,5 +4,6 @@
         - Analyzing species distribution data
         - Culture and the risk of disease                   
         - Meta Analysis
-        - NEGATIVE BINOMIAL REGRESSION 
+        - NEGATIVE BINOMIAL REGRESSION
+        - QualityControlR.R
 
