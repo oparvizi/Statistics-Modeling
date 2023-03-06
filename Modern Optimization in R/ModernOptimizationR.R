@@ -17,7 +17,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       h4("Description"),
-      p("An attempt analyze species distribution data with R."),
+      p("1- Monte Carlo search: A simple implementation of the Monte Carlo search, which adopts the uniform distribution U(lower; upper). 2- other."),
       HTML(paste0(
         "<br>",
         "<img style = 'display: block; margin-left: auto;margin-right: auto;' src='https://www.svgrepo.com/show/245581/learning.svg'; width = '50'; height='50'; background-color: white;>",
