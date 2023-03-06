@@ -4,6 +4,6 @@
         - Analyzing species distribution data
         - Culture and the risk of disease                   
         - Meta Analysis
+        - Modern Optimization in R
         - NEGATIVE BINOMIAL REGRESSION
-        - QualityControlR.R
-
+        - Quality Control with R
