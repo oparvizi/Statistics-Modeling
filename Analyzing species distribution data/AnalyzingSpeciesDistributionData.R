@@ -11,7 +11,7 @@ library(ggplot2)
 library(rspat)
 library(terra)
 library(reactable)
-
+#library(raster)
 
 # Define UI ----
 ui <- fluidPage(
