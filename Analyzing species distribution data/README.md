@@ -1,2 +1,2 @@
 ## Analyzing species distribution data
-<img width="1031" alt="image" src="https://user-images.githubusercontent.com/105786517/222935591-3fdce8f2-9afa-4273-a914-68471792470d.png">
+![image](https://user-images.githubusercontent.com/105786517/224568487-b522d552-8df2-41c3-980b-a0bd107ba4cd.png)
