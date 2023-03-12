@@ -19,7 +19,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       h4("Description"),
-      p("An attempt analyze species distribution data with R."),
+      p("An attempt to analyze species distribution data with R."),
       HTML(paste0(
         "<br>",
         "<img style = 'display: block; margin-left: auto;margin-right: auto;' src='https://www.svgrepo.com/show/245581/learning.svg'; width = '50'; height='50'; background-color: white;>",
