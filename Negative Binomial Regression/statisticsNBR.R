@@ -10,12 +10,10 @@ if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-proj
 if(!require(lme4)) install.packages("lme4", repos = "http://cran.us.r-project.org")
 if(!require(dplyr)) install.packages("dplyr", repos = "http://cran.us.r-project.org")
 if(!require(emmeans)) install.packages("emmeans", repos = "http://cran.us.r-project.org")
-
 if(!require(DBI)) install.packages("DBI", repos = "http://cran.us.r-project.org")
 if(!require(readxl)) install.packages("readxl", repos = "http://cran.us.r-project.org")
 if(!require(writexl)) install.packages("writexl", repos = "http://cran.us.r-project.org")
 if(!require(haven)) install.packages("haven", repos = "http://cran.us.r-project.org")
-if(!require(dplyr)) install.packages("dplyr", repos = "http://cran.us.r-project.org")
 if(!require(RODBC)) install.packages("RODBC", repos = "http://cran.us.r-project.org")
 # Install RSQLite library (2 options)
 if(!require(RSQLite)) install.packages("RSQLite", repos = "http://cran.us.r-project.org") # option 1
