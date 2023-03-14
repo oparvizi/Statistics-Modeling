@@ -5,5 +5,5 @@
         - Culture and the risk of disease                   
         - Meta Analysis
         - Modern Optimization in R
-        - NEGATIVE BINOMIAL REGRESSION
+        - Negative Binomial Regression
         - Quality Control with R
