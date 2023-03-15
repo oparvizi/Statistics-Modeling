@@ -5,13 +5,15 @@ if(!require(shinydashboard)) install.packages("shinydashboard", repos = "http://
 if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-project.org")
 if(!require(rspat)) install.packages("rspat", repos = "http://cran.us.r-project.org")
 if(!require(terra)) install.packages("terra", repos = "http://cran.us.r-project.org")
+if(!require(dplyr)) install.packages("dplyr", repos = "http://cran.us.r-project.org")
 
 # Load libraries
 library(ggplot2)
 library(rspat)
 library(terra)
 library(reactable)
-#library(raster)
+library(raster)
+library(dplyr)
 
 # Define UI ----
 ui <- fluidPage(
