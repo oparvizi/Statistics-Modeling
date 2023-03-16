@@ -2,7 +2,7 @@
 
     Various statistical Dashboard
         - Culture and the risk of disease                   
-        - Meta Analysis
+        - Meta Analysis                         https://modelingapps.shinyapps.io/PublishR-Meta/
         - Modern Optimization in R
         - Negative Binomial Regression:         https://modelingapps.shinyapps.io/PublishR-nbr/
         - Quality Control with R
