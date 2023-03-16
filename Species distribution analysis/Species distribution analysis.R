@@ -1,4 +1,4 @@
-setwd("D:/CODES/R")
+#setwd("D:/CODES/R/PublishR")
 
 if(!require(reactable)) install.packages("reactable", repos = "http://cran.us.r-project.org")
 if(!require(shiny)) install.packages("shiny", repos = "http://cran.us.r-project.org")
@@ -47,9 +47,10 @@ server <- function(input, output) {
   dat <- read.csv("wildpot.csv")
   saveRDS(dat, file = "dat.Rds")
   readRDS(file = "dat.Rds")
+  
   ##  The coordinate data is in degrees, minutes, seconds---------------------
   # first coerce character values to numbers
-  dat <- read.csv("wildpot.csv")
+  dat <- read.csv("wildpot.csv", header = TRUE)
   for (i in c('LongD', 'LongM', 'LongS', 'LatD', 'LatM', 'LatS')) {
     dat[, i] <- as.numeric(dat[,i])
   }
@@ -57,6 +58,7 @@ server <- function(input, output) {
   dat$lat <- dat$LatD + dat$LatM / 60 + dat$LatS / 3600
   # Southern hemisphere gets a negative sign
   dat$lat[dat$LatH == 'S'] <- -1 * dat$lat[dat$LatH == 'S']
+
   saveRDS(dat, file = "dat.Rds")
   
     # Descriptive statistics and plots
@@ -79,7 +81,7 @@ server <- function(input, output) {
       searchable = TRUE,
       filterable = TRUE,
       defaultPageSize = 5,
-      paginationType = "simple",
+      paginationType = "jump",
       language = reactableLang(
         searchPlaceholder = "Search...",
         noData = "No entries found",
